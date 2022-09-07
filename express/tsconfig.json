@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    // Type Checking
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    //Emit
+    "outDir": "dist",
+    "removeComments": true,
+    "sourceMap": true,
+    //Modules
+    "rootDir": "src",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    //Interop Constraints
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    //Utils
+    "target": "ES2021",
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}

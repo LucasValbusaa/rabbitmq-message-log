@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  express:
+    build: ./express
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: nodejs-express
+    ports:
+      - 3001:3000
+    volumes:
+      - ./express:/home/node/express

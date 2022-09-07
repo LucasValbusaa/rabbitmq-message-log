@@ -1,13 +1,5 @@
 {
   "compilerOptions": {
-    // Type Checking
-    "strict": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     //Emit
     "outDir": "dist",
     "removeComments": true,

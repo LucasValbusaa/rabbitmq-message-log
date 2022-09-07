@@ -32,7 +32,7 @@
 ### Use express route to login with a valid user
 
 - url: http://localhost:3001/api/login
-- exemploLoginUser: { name: 'lucas, password: '123' }
+- example_login_user: { name: 'lucas, password: '123' }
 
 ### Use express route to generate a log message on rabbitmq
 
@@ -45,3 +45,21 @@
 ### Use nestjs route to obtain rabbitmq logs
 
 - url: http://localhost:3000/rabbitmq/logs
+
+<br>
+
+![RabbitMQ](https://img.shields.io/badge/Rabbitmq-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
+
+### Log in Rabbitmq UI
+
+- url: http://localhost:15672
+- user: guest
+- password: guest
+
+### Create a queue
+
+- queue_name: nest
+
+### Bind queue nest to a Exchenge amq.direct
+
+- routing_key: nest_route

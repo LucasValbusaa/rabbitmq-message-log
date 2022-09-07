@@ -9,3 +9,11 @@ services:
       - 3001:3000
     volumes:
       - ./express:/home/node/express
+  nest:
+    build: ./nestjs
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: nodejs-nest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./nestjs:/home/node/nest

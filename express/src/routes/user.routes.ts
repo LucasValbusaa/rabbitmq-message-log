@@ -1,14 +1,20 @@
+import { fakeUser } from "@/data/fake-user";
+import { compareKeys } from "@/validators/keys-validation";
+import env from "@/configs/envs";
 import { Router } from "express";
+import { sign } from "jsonwebtoken";
 
 export default (router: Router): void => {
-  router.get("/users/find-all", (_req, res) => {
-    const user = [
-      {
-        name: "Lucas",
-        email: "lucasvalbusagit@gmail.com",
-      },
-    ];
+  router.post("/users/authenticate", (req, res) => {
+    const isValidKeys = compareKeys(fakeUser, req.body);
+    if (!isValidKeys) return res.status(400).json({ error: "Missing params" });
 
-    return res.status(200).json(user);
+    if (fakeUser.password !== req.body.password) {
+      return res.status(403).json({ error: "Unauthorized" });
+    }
+
+    const token = sign(fakeUser, env.token_screet);
+
+    return res.json({ token });
   });
 };
